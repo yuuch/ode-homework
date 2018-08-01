@@ -51,6 +51,25 @@ def implicit_euler_method(u_0=1,v_0=1,n=10000):
         v_value_list.append(v_new)
 
     return u_value_list,v_value_list
+def implicit_midpoint_method(u_0=1,v_0=1,n=10000):
+    t_interval=[0,100]
+    mat_of_coe=[[98,198],[-99,-199]]# matrix of coefficients
+    u_value_list=[u_0]
+    v_value_list=[v_0]
+    h = (t_interval[1]-t_interval[0])*1.0/n
+    dace = (1-98*h/2)*(1+199*h/2)-(-99*h/2)*(198*h/2) # it is just a constant
+
+    for i in range(n):
+        u_new = ((1+199.0*h/2)*(1+98.0*h/2)+198.0*h/2*(-99*h/2))*u_value_list[i]
+        u_new = u_new + 198*v_value_list[i]
+        u_new = u_new/dace
+        u_value_list.append(u_new)
+
+        v_new = (-99*h)*u_value_list[i]+((-99*h/2)*(99*h)+(1-49*h)*(1-199*h/2))*v_value_list[i]
+        v_new = v_new/dace
+        v_value_list.append(v_new)
+
+    return u_value_list,v_value_list
 
 
     
@@ -60,9 +79,10 @@ if __name__=="__main__":
     v_list,u_list = explicit_euler_method(n=n)
     real_u ,real_v = exact_values(n=n)
     imp_eur_u,imp_eur_v =implicit_euler_method(n=n)
+    imp_mid_u,imp_mid_v = implicit_midpoint_method(n=n)
     #plot_lines(real_v,v_list,fig_name='u_lines.svg',n=n)
     #plot_lines(real_u,u_list,fig_name='v_lines.svg')
-    plot_lines(real_u,imp_eur_u,fig_name='implicit_euler_u_lines.svg')
+    plot_lines(real_v,imp_mid_v,fig_name='implicit_midpoint_v_lines.svg')
 
 '''
 class ODEs(object):

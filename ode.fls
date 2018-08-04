@@ -237,6 +237,10 @@ INPUT /usr/share/texmf-dist/tex/latex/oberdiek/transparent.sty
 INPUT /usr/share/texmf-dist/tex/latex/oberdiek/transparent.sty
 INPUT /usr/share/texmf-dist/tex/latex/tools/bm.sty
 INPUT /usr/share/texmf-dist/tex/latex/tools/bm.sty
+INPUT /usr/share/texmf-dist/tex/latex/tools/array.sty
+INPUT /usr/share/texmf-dist/tex/latex/tools/array.sty
+INPUT /usr/share/texmf-dist/tex/latex/booktabs/booktabs.sty
+INPUT /usr/share/texmf-dist/tex/latex/booktabs/booktabs.sty
 INPUT /usr/share/texmf-dist/tex/latex/beamertheme-metropolis/beamerthememetropolis.sty
 INPUT /usr/share/texmf-dist/tex/latex/beamertheme-metropolis/beamerthememetropolis.sty
 INPUT /usr/share/texmf-dist/tex/latex/pgfopts/pgfopts.sty

@@ -3,6 +3,8 @@
 \usepackage{svg}
 \usepackage{graphics}
 \usepackage{bm}
+\usepackage{array}   
+\usepackage{booktabs}
 \usetheme{metropolis}
 \title{Stiff Set (1)}
 \date{\today}
@@ -142,6 +144,7 @@
 
  \section{Explicit Runge-Kutta Method}
  \begin{frame}{explicit Runge-Kutta Method}
+    Explicit Runge-Kutta method for this problem 
     \[
         \begin{cases}
             u_{n+1} &= u_n +\frac{1}{6}(k_{u1}+2k_{u2}+2k_{u3}+k_{u4})\\
@@ -186,6 +189,14 @@
     \centering
     \includegraphics[height=8cm,width=12cm]{RK4_v_lines.pdf}
  \end{frame}
+
+
+\begin{frame}{Compare methods }
+    Explicit Euler Method:  $O(h)$ ,    1.103\\
+    Implicit Euler Method: $O(h)$,     0.396\\
+    Implicit Midpoint Method: $O(h^2)$,    0.104\\
+    Explicit Runge-Kutta Method(RK4): $O(h^4)$,    1.118
+\end{frame}
  \begin{frame}[standout]
     Thank you !
  \end{frame}
